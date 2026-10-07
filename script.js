@@ -227,8 +227,6 @@ function applyHomeLocks() {
   });
 }
 
-function testIds() { return Object.keys(TEST_ANSWERS); }
-
 function initRequiredReveals() {
   document.querySelectorAll('details[data-required-reveal]').forEach(details => {
     details.addEventListener('toggle', () => {
@@ -242,31 +240,6 @@ function initRequiredReveals() {
   });
 }
 
-function initAttemptNotes() {
-  testIds().forEach(id => {
-    const box = document.getElementById(id);
-    if (!box || document.getElementById(id + '-attempts')) return;
-    const note = document.createElement('p');
-    note.id = id + '-attempts';
-    note.className = 'attempt-note';
-    box.before(note);
-  });
-  restoreTestStates();
-}
-
-function updateAttemptNote(id) {
-  const note = document.getElementById(id + '-attempts');
-  if (!note) return;
-  if (completedTests.has(id)) {
-    note.textContent = 'Тест завершён';
-    note.classList.add('completed');
-    return;
-  }
-  const remaining = Math.max(0, 2 - Number(testAttempts[id] || 0));
-  note.textContent = remaining === 2 ? 'У тебя 2 попытки' : `Осталась ${remaining} попытка`;
-  note.classList.remove('completed');
-}
-
 function lockTest(id) {
   const box = document.getElementById(id);
   const test = box?.closest('.exercise-card, .action-card');
@@ -276,8 +249,7 @@ function lockTest(id) {
 }
 
 function restoreTestStates() {
-  testIds().forEach(id => {
-    updateAttemptNote(id);
+  Object.keys(TEST_ANSWERS).forEach(id => {
     if (completedTests.has(id)) lockTest(id);
   });
 }
@@ -311,7 +283,6 @@ function showFeedback(id, ok, goodText, badText) {
       lockTest(id);
     }
   }
-  updateAttemptNote(id);
   unlockNextChapterIfReady(currentPage);
   saveProgress();
 }
@@ -477,7 +448,6 @@ function resetZoneTest(poolId,zoneIds,feedbackId) {
     test.classList.remove('test-completed');
     test.querySelectorAll('button, input, select').forEach(control => { control.disabled = false; });
   }
-  updateAttemptNote(feedbackId);
   unlockedChapters = 1;
   for (let index = 0; index < CHAPTER_ORDER.length - 1; index += 1) {
     if (missingTests(CHAPTER_ORDER[index]).length) break;
@@ -646,7 +616,7 @@ document.addEventListener('DOMContentLoaded',() => {
   const previewFocus = previewPage ? new URLSearchParams(location.search).get('focus') : null;
   if (previewFocus) setTimeout(() => document.getElementById(previewFocus)?.scrollIntoView({behavior:'instant', block:'start'}), 120);
   applyHomeLocks();
-  initAttemptNotes();
+  restoreTestStates();
   initRequiredReveals();
   initSortable();
   initZoneSort('idea-pool','zone-left','zone-right');
