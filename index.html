@@ -136,7 +136,7 @@
           </div>
         </details>
 
-        <section class="lesson-block income-actions fade-in"><p>Какой бы канал ни выбрал Гость, его оплаченный заказ попадёт в общую выручку ресторана.</p><h2>Что нужно делать Шифту на смене с выручкой</h2><p class="strong-lead">Открой Brave&amp;Bold и сравни фактическую выручку с целью.</p><div class="revenue-report-review"><figure class="daily-revenue-figure"><img src="assets/Выручка за день.png?v=20260929-1" alt="Сравнение фактической выручки с целью в Brave&amp;Bold"><figcaption>Выручка за день в Brave&amp;Bold</figcaption></figure><aside class="report-reading-note"><span>На что смотреть</span><strong>Факт ниже цели?</strong><p>Открой продажи по часам и найди, когда началось отставание. Причины разберём в следующем модуле.</p></aside></div></section>
+        <section class="lesson-block income-actions fade-in"><p>Какой бы канал ни выбрал Гость, его оплаченный заказ попадёт в общую выручку ресторана.</p><h2>Что нужно делать Шифту на смене с выручкой</h2><p class="strong-lead">Открой Brave&amp;Bold и сравни фактическую выручку с целью.</p><figure class="daily-revenue-figure"><img src="assets/Выручка за день.png?v=20260929-1" alt="Фактическая выручка 299 308 рублей при цели 894 604 рубля в Brave&amp;Bold"><figcaption>Выручка за день в Brave&amp;Bold</figcaption></figure><div class="do-this"><span>Если выручка ниже цели</span><ol><li>Посмотри продажи по часам и определи, когда началось отставание.</li><li>Зафиксируй отклонение. В следующем модуле разберём, какие показатели помогут найти его причину.</li></ol></div></section>
 
         <section class="action-card fade-in">
           <span class="action-icon" aria-hidden="true">?</span>
@@ -164,7 +164,7 @@
         <div class="chapter-hero-inner"><span class="chapter-index">02 / 06</span><h1>Что влияет<br>на выручку</h1><p>Трафик и средний чек</p></div>
       </header>
       <div class="content-wrap wide-content">
-        <p class="lead revenue-module-lead fade-in">Сначала разберём, из чего складывается выручка, а затем — что может повлиять на будущие заказы.</p>
+        <p class="lead revenue-module-lead fade-in">В этом модуле разберём выручку по частям: сначала трафик и средний чек — они показывают, из чего складываются продажи. Затем поговорим о Гостевом опыте и скорости обслуживания — они могут повлиять на то, захочет ли Гость вернуться.</p>
         <p class="lead fade-in"><strong>Ресторан зарабатывает — это выручка.</strong> Она складывается из трафика и среднего чека.</p>
         <section class="revenue-example fade-in" aria-label="Пример среднего чека и выручки">
           <span>На простом примере</span><h2>Два заказа — две разные суммы</h2>
@@ -256,9 +256,22 @@
           <p><strong>Скорость обслуживания — SOS.</strong> Если заказ долго ждёт на станции, Гость дольше ждёт выдачи. SOS показывает время от чека до выдачи последней позиции заказа. Его значение смотри в Brave&amp;Bold.</p>
         </aside>
 
-        <section class="handoff-case fade-in" aria-label="Ситуация с ожиданием заказа у выдачи">
-          <img src="assets/sos-handoff-scene-v1.png?v=1" alt="Гость ждёт заказ у стойки, сотрудник готовит выдачу, управляющий сменой замечает ожидание" loading="lazy">
-          <div><span class="eyebrow">Ситуация на смене</span><h2>Гость ждёт заказ у выдачи</h2><p>Кухня работает в обычном темпе, а очередь растёт только у стойки. Посмотри на ситуацию глазами Гостя и проверь, где задержался заказ.</p></div>
+        <section class="sos-station-exercise fade-in" aria-labelledby="sos-station-title">
+          <figure class="sos-handoff-scene">
+            <img src="assets/sos-handoff-scene-v2.png?v=1" alt="Гость ждёт у стойки выдачи, сотрудник проверяет заказ, управляющий сменой замечает задержку, на кухне собирают бургер" loading="lazy">
+            <figcaption>Заказ задерживается — Шифт проверяет, на какой станции он остановился.</figcaption>
+          </figure>
+          <div class="sos-station-question">
+            <span class="eyebrow">Ситуация на смене</span>
+            <h2 id="sos-station-title">Где задержался заказ?</h2>
+            <p>На кухне позиции готовят в обычном темпе. Но готовые позиции ждут, пока сотрудник соберёт их в заказ.</p>
+            <div class="station-choice-grid" data-choice-group>
+              <button type="button" onclick="answerChoice(this, false, 'sos-station-feedback', '', 'На кухне позиции готовят в обычном темпе — задержка возникла позже.')"><strong>Кухня</strong><span>Позиции ещё готовятся</span></button>
+              <button type="button" onclick="answerChoice(this, true, 'sos-station-feedback', 'Верно: позиции уже готовы, но заказ ещё собирают. Шифт проверяет работу станции сборки и устраняет причину задержки.', '')"><strong>Сборка</strong><span>Готовые позиции ждут, пока их соберут в заказ</span></button>
+              <button type="button" onclick="answerChoice(this, false, 'sos-station-feedback', '', 'Задержка начинается раньше: заказ ещё не собран и не готов к выдаче.')"><strong>Выдача</strong><span>Собранный заказ ждёт, когда его вручат Гостю</span></button>
+            </div>
+            <div class="feedback-box" id="sos-station-feedback" aria-live="polite"></div>
+          </div>
         </section>
 
         <section class="sos-target fade-in"><div><span>Цель SOS</span><strong>3:10</strong><small>3 минуты 10 секунд</small></div><div><p><strong>Если SOS выше цели:</strong></p><ol><li>Найди западающую станцию.</li><li>Устрани проблему, которая мешает выполнять скорость обслуживания на этой станции.</li><li>Снова проверь SOS.</li></ol></div></section>
@@ -269,11 +282,11 @@
         </figure>
 
         <section class="action-card fade-in">
-          <span class="action-icon" aria-hidden="true">?</span><p><strong>Что сделать Шифту в этой ситуации?</strong></p>
+          <span class="action-icon" aria-hidden="true">?</span><p><strong>Ты нашёл задержку на сборке: готовые позиции ждут, пока заказ соберут.</strong> Что сделать Шифту?</p>
           <div class="binary-choice" data-choice-group>
-            <button type="button" onclick="answerChoice(this, true, 'guest-metrics-feedback', 'Верно! Данные указывают на западающую зону: усиль выдачу, проверь организацию процесса и затем снова оцени SOS.')">Временно усилить выдачу, проверить работу станции и повторно оценить SOS</button>
-            <button type="button" onclick="answerChoice(this, false, 'guest-metrics-feedback', '', 'Кухня работает в обычном темпе, поэтому перевод сотрудника может создать вторую западающую зону.')">Перевести сотрудника кухни на выдачу и повторно оценить SOS</button>
-            <button type="button" onclick="answerChoice(this, false, 'guest-metrics-feedback', '', 'Людей на смене достаточно. Сначала скорректируй работу зоны, где уже найдена проблема.')">Вызвать дополнительного сотрудника на выдачу и повторно оценить SOS</button>
+            <button type="button" onclick="answerChoice(this, false, 'guest-metrics-feedback', '', 'Выдача не причина задержки: заказ ещё не собран. Сначала помоги станции, где остановился процесс.')">Временно усилить выдачу, чтобы сотрудник быстрее передавал готовые заказы</button>
+            <button type="button" onclick="answerChoice(this, true, 'guest-metrics-feedback', 'Верно! Проверь, что тормозит сборку, устрани помеху и при необходимости усиль эту станцию.', '')">Проверить работу сборки, устранить помеху и при необходимости усиль станцию</button>
+            <button type="button" onclick="answerChoice(this, false, 'guest-metrics-feedback', '', 'На кухне позиции готовят вовремя, а нехватка людей на смене не указана. Найди причину на сборке.')">Попросить кухню готовить быстрее и вызвать дополнительного сотрудника</button>
           </div>
           <div class="feedback-box" id="guest-metrics-feedback" aria-live="polite"></div>
         </section>
@@ -288,13 +301,9 @@
         <section class="definition-card fade-in"><span>Ресторан тратит — это затраты</span><p>Затраты — это средства, которые потратили на продукцию и её производство, аренду, коммунальные услуги и зарплату сотрудникам.</p></section>
         <section class="lesson-block fade-in">
           <h2>Познакомься с четырьмя группами затрат</h2>
-          <aside class="cost-home-example"><strong>Как дома:</strong><p>продукты, зарплата, свет, вода и ремонт. В ресторане те же виды расходов, только у каждого есть свой показатель.</p></aside>
-          <div class="cost-groups-visual" aria-label="Четыре группы затрат и действия на смене">
-            <article><span class="cost-group-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 23c0-8 7-14 16-14s16 6 16 14H8Z"/><path d="M8 27h32c0 7-6 12-16 12S8 34 8 27Z"/><path d="M11 24h26M14 30h20"/></svg></span><b>FC · Food Cost</b><h3>Продукты и упаковка</h3><p>Контролируй приготовление, упаковку и списания.</p></article>
-            <article><span class="cost-group-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="16" cy="15" r="6"/><circle cx="32" cy="15" r="6"/><path d="M5 36c0-7 4-11 11-11s11 4 11 11M21 36c0-7 4-11 11-11s11 4 11 11"/><circle cx="24" cy="24" r="19"/><path d="M24 13v11l8 5"/></svg></span><b>LC · Labor Cost</b><h3>Часы команды</h3><p>Расставляй команду с учётом текущей нагрузки.</p></article>
-            <article><span class="cost-group-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M18 30c0-4-7-8-7-16a13 13 0 1 1 26 0c0 8-7 12-7 16H18Z"/><path d="M19 35h10M21 40h6"/><path d="M13 27c-4 4-3 9 1 12 4-3 4-7 0-11M37 29c4 4 3 8-1 11-4-3-4-7 0-11"/></svg></span><b>Коммунальные расходы</b><h3>Свет, вода и оборудование</h3><p>Используй ресурсы только по необходимости.</p></article>
-            <article><span class="cost-group-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M29 8a12 12 0 0 0-13 15L7 32a5 5 0 0 0 7 7l9-9A12 12 0 0 0 38 17l-7 7-7-7 5-9Z"/><path d="m10 35 3 3"/></svg></span><b>Прочие затраты</b><h3>Инвентарь и ремонт</h3><p>Бережно обращайся с оборудованием и замечай поломки.</p></article>
-          </div>
+          <aside class="cost-home-example"><strong>Представь обычный дом.</strong><p>Семья покупает продукты, платит за свет и воду, иногда ремонтирует технику. В ресторане похожая логика: чтобы он работал, нужны продукты, сотрудники, коммунальные услуги и исправное оборудование.</p></aside>
+          <p>Затраты ресторана делятся на четыре группы:</p>
+          <ul class="cost-list"><li><strong>FC</strong><span>затраты на производство продукции (Food Cost, или FC);</span></li><li><strong>LC</strong><span>затраты на оплату труда сотрудников (Labor Cost, или LC);</span></li><li><strong>₽</strong><span>коммунальные расходы;</span></li><li><strong>↗</strong><span>расходы на различный ремонт (Прочие затраты).</span></li></ul>
         </section>
 
         <section class="lesson-block fade-in"><h2>Food Cost (FC)</h2><p><strong>Что показывает:</strong> сколько ресторан тратит на продукты, упаковку и другие производственные расходы.</p><div class="compare-grid"><article class="metric-card"><span class="metric-label">Прямой FC</span><p>Продукты и упаковка, которые использовали для заказа.</p></article><article class="metric-card accent"><span class="metric-label">Прочий FC</span><p>Списания, питание сотрудников, недостачи и излишки.</p></article></div><div class="do-this"><span>Что делать на смене</span><ol><li>Следить за правильным приготовлением.</li><li>Не допускать лишних списаний и расхода упаковки.</li><li>Контролировать учёт продукции.</li></ol></div></section>
@@ -423,6 +432,6 @@
     </div>
   </main>
 
-  <script src="script.js?v=20261006-12"></script>
+  <script src="script.js?v=20261007-13"></script>
 </body>
 </html>
