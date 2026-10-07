@@ -563,10 +563,6 @@ function initRestaurantMap() {
       refreshHomeContinue();
       saveProgress();
     });
-    hotspot.addEventListener('mouseenter', () => selectRestaurantZone(hotspot.dataset.zone));
-    hotspot.addEventListener('mouseleave', () => hotspot.classList.remove('active'));
-    hotspot.addEventListener('focus', () => selectRestaurantZone(hotspot.dataset.zone));
-    hotspot.addEventListener('blur', () => hotspot.classList.remove('active'));
   });
 }
 
