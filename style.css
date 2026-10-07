@@ -858,23 +858,6 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible {
 .revenue-story-guest strong{max-width:185px}
 @media(max-width:520px){.restaurant-result{padding:24px 12px}.restaurant-result .restaurant-result-formula{gap:6px}.restaurant-result-formula strong,.restaurant-result-formula b{font-size:clamp(14px,4.2vw,21px)}.restaurant-result-formula i{font-size:19px}.profit-main-formula{gap:6px;padding:10px 11px;font-size:clamp(13px,4vw,18px)}.revenue-story-guest strong{max-width:100%}}
 
-/* Illustrated SOS diagnosis, matching the course's restaurant palette. */
-.sos-station-exercise{margin:34px 0 42px}
-.sos-handoff-scene{margin:0 0 28px;overflow:hidden;border:1px solid #eadfd3;border-radius:22px;background:#fff;box-shadow:var(--shadow)}
-.sos-handoff-scene img{display:block;width:100%;height:auto;aspect-ratio:16/8.8;object-fit:cover}
-.sos-handoff-scene figcaption{padding:14px 18px;color:var(--c-ink);background:#fffaf4;font-size:15px;font-weight:700;line-height:1.45}
-.sos-station-question{padding:26px;border:1px solid #eadfd3;border-radius:22px;background:#fff}
-.sos-station-question h2{margin:8px 0 10px;color:var(--c-ink);font-size:clamp(28px,4vw,38px);line-height:1.12}
-.sos-station-question>p{margin:0;color:#573c2f;line-height:1.55}
-.station-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
-.station-choice-grid button{min-height:112px;padding:17px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:7px;border:1px solid #e2d4c5;border-radius:16px;color:var(--c-ink);background:#fffaf4;text-align:left;cursor:pointer;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
-.station-choice-grid button:hover,.station-choice-grid button:focus-visible{border-color:var(--c-brand);box-shadow:0 6px 18px rgba(80,35,20,.1);transform:translateY(-2px)}
-.station-choice-grid button strong{font-family:var(--font-head);font-size:22px;line-height:1.15}
-.station-choice-grid button span{font-size:14px;line-height:1.4}
-.station-choice-grid button.correct-pick{color:#fff;background:var(--c-success);border-color:var(--c-success)}
-.station-choice-grid button.wrong-pick{color:#fff;background:var(--c-danger);border-color:var(--c-danger)}
-.sos-station-question .feedback-box{margin-top:14px}
-@media(max-width:700px){.sos-handoff-scene img{aspect-ratio:4/3}.sos-station-question{padding:20px}.station-choice-grid{grid-template-columns:1fr;gap:9px}.station-choice-grid button{min-height:76px;padding:13px 15px}.station-choice-grid button strong{font-size:20px}}
 
 /* Sales channel icons and profit formula clarity */
 .revenue-definition>span{color:#cfc5ff;font-size:clamp(12px,2.8vw,30px);letter-spacing:-.025em;white-space:nowrap}

@@ -16,7 +16,7 @@ const PROGRESS_KEY = 'restaurant_metrics_2_progress_v12';
 const PAGE_REQUIREMENTS = {
   home: ['map-hall', 'map-cash', 'map-kitchen', 'map-assembly', 'map-handoff', 'map-manager'],
   income: ['reveal-digital', 'income-feedback'],
-  revenue: ['reveal-revenue', 'reveal-traffic', 'reveal-average-check', 'average-check-feedback', 'sos-station-feedback', 'guest-metrics-feedback'],
+  revenue: ['reveal-revenue', 'reveal-traffic', 'reveal-average-check', 'average-check-feedback'],
   costs: ['cost-feedback'],
   profit: [],
   productivity: ['itph-feedback', 'seef-recall-feedback'],
@@ -25,8 +25,6 @@ const PAGE_REQUIREMENTS = {
 const TEST_ANSWERS = {
   'income-feedback': 'Сравни продажи с целью, проверь трафик и средний чек, затем дай команде конкретную задачу.',
   'average-check-feedback': 'При стабильном трафике сначала проверь наполненность и стоимость блюд в заказе, а затем скорректируй фокус продаж.',
-  'sos-station-feedback': 'Сборка: готовые позиции ждут, пока сотрудник объединит их в заказ. Проверь работу станции и устрани причину задержки.',
-  'guest-metrics-feedback': 'Проверь работу сборки, устрани помеху и при необходимости усиль эту станцию.',
   'cost-feedback': 'К прямому Food Cost относятся продукты и упаковка; к прочему — списания, питание сотрудников, недостачи и излишки.',
   'itph-feedback': 'Если фактический ITPH выше плана и растёт очередь, команда перегружена: усиль загруженную станцию по SEEF.',
   'seef-recall-feedback': 'Опытный сотрудник усиливает сборку, а новичок получает подходящую задачу с учётом его навыков.',
@@ -74,7 +72,7 @@ function showCourseNotice(message, feedbackId) {
     ? requirement
     : requirement?.matches('.employee-hotspot')
       ? requirement.closest('.restaurant-map')
-      : requirement?.closest('.exercise-card, .action-card, .sos-station-exercise');
+      : requirement?.closest('.exercise-card, .action-card');
   if (!target) return;
   target.classList.add('needs-attention');
   target.scrollIntoView({behavior:'smooth', block:'center'});
@@ -271,7 +269,7 @@ function updateAttemptNote(id) {
 
 function lockTest(id) {
   const box = document.getElementById(id);
-  const test = box?.closest('.exercise-card, .action-card, .sos-station-exercise');
+  const test = box?.closest('.exercise-card, .action-card');
   if (!test) return;
   test.classList.add('test-completed');
   test.querySelectorAll('button:not([data-keep-enabled]), input, select').forEach(control => { control.disabled = true; });
