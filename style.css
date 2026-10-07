@@ -887,3 +887,26 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible {
 .channel-icon-card--text-only strong{max-width:120px;color:#51447d}
 @media(max-width:760px){.channel-icon-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 6px}.channel-icon-card{padding:0}.channel-icon{width:66px}.channel-icon-card strong{font-size:12px}.channel-icon-card--text-only{border-left:0}}
 @media(max-width:430px){.channel-icon-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 4px}}
+
+/* Visual examples for reading the report, SOS, and cost groups. */
+.revenue-report-review{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(220px,.9fr);gap:18px;align-items:center;margin:20px 0 8px}
+.revenue-report-review .daily-revenue-figure{width:100%;margin:0}
+.revenue-report-review .daily-revenue-figure img{width:100%}
+.report-reading-note{padding:22px;border-left:4px solid #6d56df;border-radius:0 16px 16px 0;background:#f3f0ff}
+.report-reading-note>span{display:block;margin-bottom:10px;color:#6d56df;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.report-reading-note>strong{display:block;margin-bottom:8px;color:#263d35;font-family:var(--font-head);font-size:clamp(19px,2.2vw,26px);line-height:1.2}
+.report-reading-note p{margin:0;color:#514b5b;font-size:15px;line-height:1.55}
+.handoff-case{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(240px,.95fr);gap:22px;align-items:center;margin:24px 0;padding:18px;border:1px solid #e1dced;border-radius:20px;background:#f7f5fa}
+.handoff-case img{display:block;width:100%;height:auto;max-height:320px;object-fit:contain}
+.handoff-case .eyebrow{color:#6d56df}
+.handoff-case h2{margin:8px 0 10px;color:#263d35;font-family:var(--font-head);font-size:clamp(20px,2.5vw,28px);line-height:1.2}
+.handoff-case p{margin:0;color:#514b5b;font-size:15px;line-height:1.6}
+.cost-groups-visual{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:20px 0 8px}
+.cost-groups-visual article{min-width:0;padding:18px 16px;border:1px solid #e5deed;border-top:4px solid #6d56df;border-radius:15px;background:#fff}
+.cost-group-icon{width:42px;height:42px;margin-bottom:12px;display:grid;place-items:center;border-radius:12px;color:#6d56df;background:#f3f0ff}
+.cost-group-icon svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.cost-groups-visual article>b{display:block;margin-bottom:7px;color:#6d56df;font-size:12px;line-height:1.3}
+.cost-groups-visual article h3{margin:0 0 8px;color:#263d35;font-family:var(--font-head);font-size:17px;line-height:1.25}
+.cost-groups-visual article p{margin:0;color:#514b5b;font-size:14px;line-height:1.5}
+@media(max-width:800px){.revenue-report-review,.handoff-case{grid-template-columns:1fr}.report-reading-note{padding:17px}.handoff-case{gap:12px}.handoff-case img{max-height:280px}.cost-groups-visual{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.cost-groups-visual{grid-template-columns:1fr}.cost-groups-visual article{padding:16px}.report-reading-note p,.handoff-case p{font-size:14px}}
