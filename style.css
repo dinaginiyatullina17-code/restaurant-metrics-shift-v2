@@ -888,3 +888,8 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible {
 .channel-icon-card--text-only strong{max-width:120px;color:#51447d}
 @media(max-width:760px){.channel-icon-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 6px}.channel-icon-card{padding:0}.channel-icon{width:66px}.channel-icon-card strong{font-size:12px}.channel-icon-card--text-only{border-left:0}}
 @media(max-width:430px){.channel-icon-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 4px}}
+
+/* Clear separation for the digital-channel note and module introduction. */
+.channel-digital-explainer{display:block;clear:both;max-width:860px;margin:22px 0 0!important;padding:14px 0 0;border-top:1px solid #e1dced}
+.module-intro-highlight{width:100%;max-width:none;box-sizing:border-box;margin:0 0 24px!important;padding:20px 24px;border:0;border-left:5px solid #7968e8;border-radius:0 16px 16px 0;color:#40355f;background:#f1eff8;line-height:1.55}
+@media(max-width:600px){.module-intro-highlight{padding:16px 17px;font-size:18px}}
