@@ -468,25 +468,6 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible {
   font-size: 17px;
   line-height: 1.55;
 }
-.itph-actions {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 12px;
-  margin: 24px 0 54px;
-}
-.itph-actions article {
-  min-height: 176px;
-  padding: 20px;
-  border: 1px solid #d8c9bb;
-  border-radius: 18px;
-  background: #fff;
-}
-.itph-actions h3 {
-  margin: 0 0 12px;
-  color: var(--c-brand-dk);
-  font-size: 21px;
-}
-.itph-actions p { margin: 0; font-size: 14px; line-height: 1.5; }
 .itph-course-teaser { margin-bottom: 54px; }
 .final-system {
   margin: 54px 0;
@@ -538,15 +519,8 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible {
 .final-system-equation span { color: #9fcef3; font-family: var(--font-head); font-size: 25px; }
 .final-system-equation.result { background: var(--c-brand-dk); }
 .final-system-equation.result strong:last-child { color: var(--c-brand-dk); background: #fff; }
-@media(max-width:1000px) {
-  .itph-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .itph-actions article:last-child { grid-column: 1 / -1; min-height: auto; }
-}
 @media(max-width:700px) {
-  .itph-actions,
   .final-system-drivers { grid-template-columns: 1fr; }
-  .itph-actions article,
-  .itph-actions article:last-child { grid-column: 1; min-height: auto; }
   .final-system { padding: 22px; }
   .final-system-equation { align-items: stretch; flex-direction: column; text-align: center; }
 }
@@ -897,3 +871,4 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible {
 .sos-target>div:last-child p{font-size:16px}
 .sos-target ol,.sos-target ol li{font-size:15px;line-height:1.45}
 .lc-team-metrics-note{margin-top:24px!important;padding-top:14px;border-top:1px solid #e1dced;color:#5b526e}
+.costs-module-intro{margin:0 0 22px;padding:10px 15px;border-left:4px solid #7968e8;border-radius:0 12px 12px 0;color:#51486b;background:#f1eff8;font-size:17px;line-height:1.5}
